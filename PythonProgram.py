@@ -6,10 +6,11 @@ import os      #manages file paths, enabling the loading of resources and images
 import json    #Used for to store data (saved data) , used especially for leaderbord
 
 
-pygame.init() #launches every Pygame like the sounds, graphics modules...
-pygame.font.init()   #initialize the font module
+pygame.init()                                     #launches every Pygame like the sounds, graphics modules...
+pygame.font.init()                                #initialize the font module
 
-WIDTH, HEIGHT = 800, 600 #defines the dimensions of the screen
-FPS = 60                 #frame rate per second
+WIDTH, HEIGHT = 800, 600                          #defines the dimensions of the screen
+FPS = 60                                          #frame rate per second
 screen = pygame.display.set_mode((WIDTH, HEIGHT)) #creates the game window
 pygame.display.set_caption("Zombie Shooter Game") #the title that display on game window
+clock = pygame.time.Clock()                       #this optimize the game by regulating the FPS
