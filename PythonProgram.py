@@ -35,3 +35,4 @@ LEADERBOARD = "leaderboard" #identify and check if the user is in the leaderboar
 sort_ascending = False      #controls how the leaderboard should be sorted
 
 current_state = LOGIN       #This variable records the game's current status , the program will always start with LOGIN
+current_player = ""         #this variable initialize the username as empty space so it let the user to enter its own
