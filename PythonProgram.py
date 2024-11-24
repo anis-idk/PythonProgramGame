@@ -23,3 +23,4 @@ RED = (255, 0, 0)
 
 
 title_font = pygame.font.SysFont("Arial", 64) #title font settings
+menu_font = pygame.font.SysFont("Arial", 32)  #menu font settings
