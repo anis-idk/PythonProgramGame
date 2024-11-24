@@ -7,3 +7,4 @@ import json    #Used for to store data (saved data) , used especially for leader
 
 
 pygame.init() #launches every Pygame like the sounds, graphics modules...
+pygame.font.init()   #initialize the font module
