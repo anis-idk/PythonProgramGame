@@ -20,3 +20,6 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GRAY = (128, 128, 128)
 RED = (255, 0, 0)
+
+
+title_font = pygame.font.SysFont("Arial", 64) #title font settings
