@@ -30,3 +30,4 @@ font = pygame.font.SysFont("Arial", 24)       #creating a font object to render 
 LOGIN = "login" #indentify and check if the user in login screen
 MAIN_MENU = "main_menu" # Identify and Check if the user is in main menu
 GAME = "game" #identify and check if the user is in game (gameplay)
+GAME_OVER = "game_over" #identify and check if the user is in game over screen
