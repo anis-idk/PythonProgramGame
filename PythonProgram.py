@@ -14,3 +14,9 @@ FPS = 60                                          #frame rate per second
 screen = pygame.display.set_mode((WIDTH, HEIGHT)) #creates the game window
 pygame.display.set_caption("Zombie Shooter Game") #the title that display on game window
 clock = pygame.time.Clock()                       #this optimize the game by regulating the FPS
+
+#setting colors
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+GRAY = (128, 128, 128)
+RED = (255, 0, 0)
