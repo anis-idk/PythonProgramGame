@@ -3,7 +3,7 @@ import math    #import math module to use mathematical operations like trigonome
 import random  #makes the game more unpredictable, for example, by allowing zombies to appear at random points
 import time    #offers time-related features, such as the ability to get the current cooldown or delay time.
 import os      #manages file paths, enabling the loading of resources and images from designated directories.
-import json    #Used for to store data (saved data) , used especially for leaderbord
+import json    #Used for to store data (saved data) , used especially for leaderboard
 
 
 pygame.init()                                     #launches every Pygame like the sounds, graphics modules...
@@ -31,3 +31,4 @@ LOGIN = "login" #indentify and check if the user in login screen
 MAIN_MENU = "main_menu" # Identify and Check if the user is in main menu
 GAME = "game" #identify and check if the user is in game (gameplay)
 GAME_OVER = "game_over" #identify and check if the user is in game over screen
+LEADERBOARD = "leaderboard" #identify and check if the user is in the leaderboard menu
