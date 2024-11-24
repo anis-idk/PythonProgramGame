@@ -11,3 +11,4 @@ pygame.font.init()   #initialize the font module
 
 WIDTH, HEIGHT = 800, 600 #defines the dimensions of the screen
 FPS = 60                 #frame rate per second
+screen = pygame.display.set_mode((WIDTH, HEIGHT)) #creates the game window
