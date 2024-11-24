@@ -27,9 +27,11 @@ menu_font = pygame.font.SysFont("Arial", 32)  #menu font settings
 font = pygame.font.SysFont("Arial", 24)       #creating a font object to render and display text in my game
 
 
-LOGIN = "login" #indentify and check if the user in login screen
-MAIN_MENU = "main_menu" # Identify and Check if the user is in main menu
-GAME = "game" #identify and check if the user is in game (gameplay)
-GAME_OVER = "game_over" #identify and check if the user is in game over screen
+LOGIN = "login"             #indentify and check if the user in login screen
+MAIN_MENU = "main_menu"     # Identify and Check if the user is in main menu
+GAME = "game"               #identify and check if the user is in game (gameplay)
+GAME_OVER = "game_over"     #identify and check if the user is in game over screen
 LEADERBOARD = "leaderboard" #identify and check if the user is in the leaderboard menu
-sort_ascending = False #controls how the leaderboard should be sorted
+sort_ascending = False      #controls how the leaderboard should be sorted
+
+current_state = LOGIN       #This variable records the game's current status , the program will always start with LOGIN
