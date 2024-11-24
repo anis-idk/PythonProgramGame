@@ -10,3 +10,4 @@ pygame.init() #launches every Pygame like the sounds, graphics modules...
 pygame.font.init()   #initialize the font module
 
 WIDTH, HEIGHT = 800, 600 #defines the dimensions of the screen
+FPS = 60                 #frame rate per second
