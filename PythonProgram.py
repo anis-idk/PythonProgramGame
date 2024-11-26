@@ -86,4 +86,18 @@ health_x, health_y = 10, 10
 
 
 def spawn_zombie():
+    edge = random.choice(['top', 'bottom', 'left', 'right'])
+    if edge == 'top':
+        x = random.randint(0, WIDTH)
+        y = 0
+    elif edge == 'bottom':
+        x = random.randint(0, WIDTH)
+        y = HEIGHT
+    elif edge == 'left':
+        x = 0
+        y = random.randint(0, HEIGHT)
+    elif edge == 'right':
+        x = WIDTH
+        y = random.randint(0, HEIGHT)
+
 
