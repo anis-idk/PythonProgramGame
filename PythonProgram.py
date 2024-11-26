@@ -58,3 +58,6 @@ def load_image(filename, size=None):
     except pygame.error as e:
         print(f"Error loading image: {e}")
         return pygame.Surface(size or (50, 50))
+
+
+background = load_image('background.png', (WIDTH, HEIGHT))
