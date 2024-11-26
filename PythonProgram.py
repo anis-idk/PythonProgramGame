@@ -74,3 +74,4 @@ last_shot = 0
 shoot_cooldown = 0.5
 
 zombies = []
+zombie_speed = 1
