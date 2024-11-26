@@ -108,3 +108,5 @@ def spawn_zombie():
     }
     zombies.append(zombie)
 
+
+running = True
