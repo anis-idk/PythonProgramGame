@@ -71,3 +71,4 @@ soldier_rect = soldier.get_rect(center=(WIDTH // 2, HEIGHT // 2))
 bullets = []
 bullet_speed = 10
 last_shot = 0
+shoot_cooldown = 0.5
