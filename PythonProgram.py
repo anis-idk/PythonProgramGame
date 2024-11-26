@@ -128,6 +128,10 @@ while running:
     if keys[pygame.K_d]:
         soldier_rect.x += 3
 
+    soldier_rect.x = max(0, min(WIDTH - soldier_rect.width, soldier_rect.x))
+    soldier_rect.y = max(0, min(HEIGHT - soldier_rect.height, soldier_rect.y))
+
+
 
 
 
