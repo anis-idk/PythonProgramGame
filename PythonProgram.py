@@ -68,3 +68,4 @@ heart_img = load_image('heart.png', (40, 40))
 
 
 soldier_rect = soldier.get_rect(center=(WIDTH // 2, HEIGHT // 2))
+bullets = []
