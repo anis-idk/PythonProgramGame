@@ -59,7 +59,7 @@ def load_image(filename, size=None):
         print(f"Error loading image: {e}")
         return pygame.Surface(size or (50, 50))
 
-
+#add images from disk local
 background = load_image('background.png', (WIDTH, HEIGHT))
 soldier = load_image('survivor-idle_shotgun.png', (50, 50))
 bullet_img = load_image('yellow-ball-3d.png', (15, 15))
