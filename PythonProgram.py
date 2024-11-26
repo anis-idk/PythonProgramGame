@@ -78,6 +78,7 @@ zombie_speed = 1
 last_zombie_spawn_time = 0
 zombie_spawn_cooldown = 1
 
+#health and score setup
 health = 3
 score = 0
 font = pygame.font.SysFont("Arial", 24)
