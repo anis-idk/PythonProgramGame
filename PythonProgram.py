@@ -72,7 +72,7 @@ bullets = []
 bullet_speed = 10
 last_shot = 0
 shoot_cooldown = 0.5
-
+#zombies settings
 zombies = []
 zombie_speed = 1
 last_zombie_spawn_time = 0
