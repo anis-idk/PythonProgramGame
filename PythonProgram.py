@@ -61,3 +61,4 @@ def load_image(filename, size=None):
 
 
 background = load_image('background.png', (WIDTH, HEIGHT))
+soldier = load_image('survivor-idle_shotgun.png', (50, 50))
