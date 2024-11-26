@@ -77,3 +77,5 @@ zombies = []
 zombie_speed = 1
 last_zombie_spawn_time = 0
 zombie_spawn_cooldown = 1
+
+health = 3
