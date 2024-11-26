@@ -81,3 +81,4 @@ zombie_spawn_cooldown = 1
 health = 3
 score = 0
 font = pygame.font.SysFont("Arial", 24)
+health_x, health_y = 10, 10
