@@ -39,3 +39,7 @@ current_player = ""         #this variable initialize the username as empty spac
 current_score = 0           #this variable is basically the score of the player everytime he starts a game
 
 pygame.init()
+
+
+WIDTH, HEIGHT = 800, 600
+
