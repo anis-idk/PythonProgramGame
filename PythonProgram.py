@@ -37,3 +37,5 @@ sort_ascending = False      #controls how the leaderboard should be sorted
 current_state = LOGIN       #This variable records the game's current status , the program will always start with LOGIN
 current_player = ""         #this variable initialize the username as empty space so it let the user put its own
 current_score = 0           #this variable is basically the score of the player everytime he starts a game
+
+pygame.init()
