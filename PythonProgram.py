@@ -100,4 +100,11 @@ def spawn_zombie():
         x = WIDTH
         y = random.randint(0, HEIGHT)
 
+    zombie = {
+        "x": x,
+        "y": y,
+        "rect": zombie_img.get_rect(center=(x, y)),
+        "angle": 0,
+    }
+    zombies.append(zombie)
 
