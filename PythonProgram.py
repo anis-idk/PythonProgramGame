@@ -66,5 +66,5 @@ bullet_img = load_image('yellow-ball-3d.png', (15, 15))
 zombie_img = load_image('skeleton-attack.png', (50, 50))
 heart_img = load_image('heart.png', (40, 40))
 
-# Soldier and Bullet Setup
+
 soldier_rect = soldier.get_rect(center=(WIDTH // 2, HEIGHT // 2))
