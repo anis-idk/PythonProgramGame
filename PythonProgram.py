@@ -117,6 +117,7 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
+#keys for soldier movements
     keys = pygame.key.get_pressed()
     if keys[pygame.K_w]:
         soldier_rect.y -= 3
