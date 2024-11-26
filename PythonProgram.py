@@ -108,11 +108,11 @@ def spawn_zombie():
     }
     zombies.append(zombie)
 
-
+#Main Game Loop
 running = True
 while running:
     screen.blit(background, (0, 0))
-
+#check quit event to close the game
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
