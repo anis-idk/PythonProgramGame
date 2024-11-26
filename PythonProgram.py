@@ -110,5 +110,13 @@ def spawn_zombie():
 
 
 running = True
-screen.blit(background, (0, 0))
 while running:
+    screen.blit(background, (0, 0))
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+
+
+
