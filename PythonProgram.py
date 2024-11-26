@@ -47,7 +47,7 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Zombie Shooter Game")
 clock = pygame.time.Clock()
 
-
+#function to load image from local disk
 def load_image(filename, size=None):
     try:
         image_path = os.path.join('assets', 'sprites', filename)  # Update the folder path where images are stored
