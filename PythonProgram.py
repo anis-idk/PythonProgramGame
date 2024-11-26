@@ -79,3 +79,4 @@ last_zombie_spawn_time = 0
 zombie_spawn_cooldown = 1
 
 health = 3
+score = 0
