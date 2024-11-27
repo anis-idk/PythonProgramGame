@@ -148,6 +148,12 @@ def load_leaderboard():
     except FileNotFoundError:
         return []
 
+def save_leaderboard(leaderboard):
+    # Sort before saving (always save in descending order)
+    leaderboard.sort(key=lambda x: x['score'], reverse=True)
+    with open('leaderboard.json', 'w') as f:
+        json.dump(leaderboard, f)
+
 
 
 
