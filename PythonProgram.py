@@ -178,6 +178,11 @@ leaderboard_buttons = [
     Button(WIDTH//2 - 100, HEIGHT - 160, 200, 50, "Toggle Sort")
 ]
 
+# Input box for username
+input_box = pygame.Rect(WIDTH // 2 - 100, HEIGHT // 2, 200, 32)
+input_text = ""
+input_active = False
+
 
 
 
