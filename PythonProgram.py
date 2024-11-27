@@ -216,6 +216,18 @@ def draw_game_over():
     title_rect = title.get_rect(center=(WIDTH // 2, HEIGHT // 4))
     screen.blit(title, title_rect)
 
+    score_text = menu_font.render(f"Player: {current_player}", True, WHITE)
+    score_rect = score_text.get_rect(center=(WIDTH // 2, HEIGHT // 3))
+    screen.blit(score_text, score_rect)
+
+    score_text = menu_font.render(f"Score: {current_score}", True, WHITE)
+    score_rect = score_text.get_rect(center=(WIDTH // 2, HEIGHT // 2 - 50))
+    screen.blit(score_text, score_rect)
+
+    for button in game_over_buttons:
+        button.draw(screen)
+
+
 
 
 
