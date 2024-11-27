@@ -274,6 +274,13 @@ def reset_game():
     soldier_rect.center = (WIDTH // 2, HEIGHT // 2)
 
 
+# Main Game Loop
+running = True
+while running:
+    if current_state == GAME:
+        screen.blit(background, (0, 0))
+
+
 
 
 
