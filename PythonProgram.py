@@ -321,6 +321,25 @@ while running:
                     bullets.append({"x": bullet_x, "y": bullet_y, "dx": bullet_dx, "dy": bullet_dy})
                     last_shot = time.time()
 
+                # Update bullets
+                for bullet in bullets[:]:
+                    bullet["x"] += bullet["dx"] * bullet_speed
+                    bullet["y"] += bullet["dy"] * bullet_speed
+
+                if not (0 <= bullet["x"] <= WIDTH and 0 <= bullet["y"] <= HEIGHT):
+                    bullets.remove(bullet)
+                else:
+                    rotated_bullet = pygame.transform.rotate(bullet_img, angle)
+                    bullet_rect = rotated_bullet.get_rect(center=(bullet["x"], bullet["y"]))
+                    screen.blit(rotated_bullet, bullet_rect)
+
+
+
+
+
+
+
+
 
 
 
