@@ -346,6 +346,9 @@ while running:
                         zombie["x"] += (dx / dist) * zombie_speed
                         zombie["y"] += (dy / dist) * zombie_speed
 
+                        angle_to_soldier = math.degrees(math.atan2(-dy, dx))
+                        zombie["angle"] = angle_to_soldier
+
 
 
 
