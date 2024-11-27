@@ -173,6 +173,10 @@ game_over_buttons = [
     Button(WIDTH // 2 - 100, HEIGHT // 2 + 90, 200, 50, "Main Menu")
 ]
 
+leaderboard_buttons = [
+    Button(WIDTH // 2 - 100, HEIGHT - 100, 200, 50, "Back to Menu"),
+    Button(WIDTH//2 - 100, HEIGHT - 160, 200, 50, "Toggle Sort")
+]
 
 
 
