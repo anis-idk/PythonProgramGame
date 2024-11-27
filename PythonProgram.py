@@ -280,6 +280,17 @@ while running:
     if current_state == GAME:
         screen.blit(background, (0, 0))
 
+        # Handle events
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    current_state = MAIN_MENU
+
+
+
+
 
 
 
