@@ -154,6 +154,14 @@ def save_leaderboard(leaderboard):
     with open('leaderboard.json', 'w') as f:
         json.dump(leaderboard, f)
 
+def update_leaderboard(username, score):
+    leaderboard = load_leaderboard()
+    leaderboard.append({"username": username, "score": score})
+    leaderboard.sort(key=lambda x: x["score"], reverse=True)
+    leaderboard = leaderboard[:10]  # Keep only top 10
+    save_leaderboard(leaderboard)
+
+
 
 
 
