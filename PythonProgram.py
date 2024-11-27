@@ -117,7 +117,12 @@ def spawn_zombie():
     }
     zombies.append(zombie)
 
-
+# Button class for menu items
+class Button:
+    def __init__(self, x, y, width, height, text):
+        self.rect = pygame.Rect(x, y, width, height)
+        self.text = text
+        self.is_hovered = False
 
 
 
