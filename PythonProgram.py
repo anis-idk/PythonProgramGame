@@ -168,6 +168,12 @@ main_menu_buttons = [
     Button(WIDTH // 2 - 100, HEIGHT // 2 + 90, 200, 50, "Quit")
 ]
 
+game_over_buttons = [
+    Button(WIDTH // 2 - 100, HEIGHT // 2 + 20, 200, 50, "Try Again"),
+    Button(WIDTH // 2 - 100, HEIGHT // 2 + 90, 200, 50, "Main Menu")
+]
+
+
 
 
 
