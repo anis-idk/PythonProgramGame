@@ -362,6 +362,16 @@ while running:
                                 update_leaderboard(current_player, current_score)
                                 current_state = GAME_OVER
 
+                        # Collision with bullets
+                        for bullet in bullets[:]:
+                            if zombie["rect"].collidepoint(bullet["x"], bullet["y"]):
+                                zombies.remove(zombie)
+                                bullets.remove(bullet)
+                                score += 1
+
+
+
+
 
 
 
