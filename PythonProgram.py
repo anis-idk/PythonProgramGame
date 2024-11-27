@@ -149,6 +149,11 @@ while running:
         bullets.append({"x": bullet_x, "y": bullet_y, "dx": bullet_dx, "dy": bullet_dy})
         last_shot = time.time()
 
+    # Update bullets
+    for bullet in bullets[:]:
+
+
+
 
 
 
