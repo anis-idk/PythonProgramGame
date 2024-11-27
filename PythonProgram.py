@@ -260,6 +260,11 @@ def draw_leaderboard():
         rect = text.get_rect(center=(WIDTH // 2, 150 + i * 40))
         screen.blit(text, rect)
 
+        # Draw buttons
+        for button in leaderboard_buttons:
+            button.draw(screen)
+
+
 
 
 
