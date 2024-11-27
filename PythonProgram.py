@@ -201,6 +201,11 @@ def draw_login_screen():
     screen.blit(prompt, prompt_rect)
 
 
+def draw_main_menu():
+    screen.fill(BLACK)
+    title = title_font.render("Zombie Shooter", True, WHITE)
+    title_rect = title.get_rect(center=(WIDTH // 2, HEIGHT // 4))
+    screen.blit(title, title_rect)
 
 
 
