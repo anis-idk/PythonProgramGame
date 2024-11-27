@@ -140,6 +140,11 @@ while running:
     soldier_pos = rotated_soldier.get_rect(center=soldier_rect.center)
     screen.blit(rotated_soldier, soldier_pos)
 
+    # Shooting bullets
+    if keys[pygame.K_SPACE] and time.time() - last_shot > shoot_cooldown:
+        bullet_dx = math.cos(math.radians(angle))
+
+
 
 
 
