@@ -132,6 +132,15 @@ class Button:
         text_rect = text_surface.get_rect(center=self.rect.center)
         surface.blit(text_surface, text_rect)
 
+    def handle_event(self, event):
+        if event.type == pygame.MOUSEMOTION:
+            self.is_hovered = self.rect.collidepoint(event.pos)
+            return False
+        if event.type == pygame.MOUSEBUTTONDOWN and self.is_hovered:
+            return True
+        return False
+
+
 
 
 
