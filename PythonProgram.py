@@ -288,6 +288,18 @@ while running:
                 if event.key == pygame.K_ESCAPE:
                     current_state = MAIN_MENU
 
+                # Get keys for movement
+                keys = pygame.key.get_pressed()
+                if keys[pygame.K_w]:
+                    soldier_rect.y -= 3
+                if keys[pygame.K_s]:
+                    soldier_rect.y += 3
+                if keys[pygame.K_a]:
+                    soldier_rect.x -= 3
+                if keys[pygame.K_d]:
+                    soldier_rect.x += 3
+
+
 
 
 
