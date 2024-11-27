@@ -210,6 +210,13 @@ def draw_main_menu():
         button.draw(screen)
 
 
+def draw_game_over():
+    screen.fill(BLACK)
+    title = title_font.render("Game Over", True, RED)
+    title_rect = title.get_rect(center=(WIDTH // 2, HEIGHT // 4))
+    screen.blit(title, title_rect)
+
+
 
 
 
