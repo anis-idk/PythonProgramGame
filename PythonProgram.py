@@ -124,6 +124,15 @@ class Button:
         self.text = text
         self.is_hovered = False
 
+    def draw(self, surface):
+        color = GRAY if self.is_hovered else BLACK
+        pygame.draw.rect(surface, color, self.rect, border_radius=12)
+        pygame.draw.rect(surface, WHITE, self.rect, 2, border_radius=12)
+        text_surface = menu_font.render(self.text, True, WHITE)
+        text_rect = text_surface.get_rect(center=self.rect.center)
+        surface.blit(text_surface, text_rect)
+
+
 
 
 
