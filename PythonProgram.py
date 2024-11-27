@@ -184,6 +184,13 @@ input_text = ""
 input_active = False
 
 
+def draw_login_screen():
+    screen.fill(BLACK)
+    title = title_font.render("Login", True, WHITE)
+    title_rect = title.get_rect(center=(WIDTH // 2, HEIGHT // 3))
+    screen.blit(title, title_rect)
+
+
 
 
 
