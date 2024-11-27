@@ -349,6 +349,11 @@ while running:
                         angle_to_soldier = math.degrees(math.atan2(-dy, dx))
                         zombie["angle"] = angle_to_soldier
 
+                        rotated_zombie = pygame.transform.rotate(zombie_img, zombie["angle"])
+                        zombie["rect"] = rotated_zombie.get_rect(center=(zombie["x"], zombie["y"]))
+                        screen.blit(rotated_zombie, zombie["rect"])
+
+
 
 
 
