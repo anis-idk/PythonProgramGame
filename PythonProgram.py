@@ -250,6 +250,15 @@ def draw_leaderboard():
     leaderboard = load_leaderboard()
     leaderboard.sort(key=lambda x: x['score'], reverse=not sort_ascending)
 
+    # Draw entries
+    for i, entry in enumerate(leaderboard):
+        text = menu_font.render(
+            f"{i + 1}. {entry['username']}: {entry['score']}",
+            True,
+            WHITE
+        )
+        rect = text.get_rect(center=(WIDTH // 2, 150 + i * 40))
+        screen.blit(text, rect)
 
 
 
