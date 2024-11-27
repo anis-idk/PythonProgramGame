@@ -246,6 +246,11 @@ def draw_leaderboard():
     sort_rect = sort_text.get_rect(center=(WIDTH // 2, 100))
     screen.blit(sort_text, sort_rect)
 
+    # Get and sort leaderboard
+    leaderboard = load_leaderboard()
+    leaderboard.sort(key=lambda x: x['score'], reverse=not sort_ascending)
+
+
 
 
 
