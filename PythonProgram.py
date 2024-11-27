@@ -143,6 +143,14 @@ while running:
     # Shooting bullets
     if keys[pygame.K_SPACE] and time.time() - last_shot > shoot_cooldown:
         bullet_dx = math.cos(math.radians(angle))
+        bullet_dy = -math.sin(math.radians(angle))
+        bullet_x = soldier_rect.centerx + 30 * bullet_dx
+        bullet_y = soldier_rect.centery + 10 * bullet_dy
+        bullets.append({"x": bullet_x, "y": bullet_y, "dx": bullet_dx, "dy": bullet_dy})
+        last_shot = time.time()
+
+
+
 
 
 
