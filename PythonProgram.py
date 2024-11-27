@@ -9,6 +9,7 @@ import json    #Used for to store data (saved data) , used especially for leader
 pygame.init()                                     #launches every Pygame like the sounds, graphics modules...
 pygame.font.init()                                #initialize the font module
 
+#Screen and game setup
 WIDTH, HEIGHT = 800, 600                          #defines the dimensions of the screen
 FPS = 60                                          #frame rate per second
 screen = pygame.display.set_mode((WIDTH, HEIGHT)) #creates the game window
@@ -21,11 +22,13 @@ BLACK = (0, 0, 0)
 GRAY = (128, 128, 128)
 RED = (255, 0, 0)
 
+#Fonts type settings
 
 title_font = pygame.font.SysFont("Arial", 64) #title font settings
 menu_font = pygame.font.SysFont("Arial", 32)  #menu font settings
 font = pygame.font.SysFont("Arial", 24)       #creating a font object to render and display text in my game
 
+#Game state
 
 LOGIN = "login"             #indentify and check if the user in login screen
 MAIN_MENU = "main_menu"     # Identify and Check if the user is in main menu
@@ -34,12 +37,15 @@ GAME_OVER = "game_over"     #identify and check if the user is in game over scre
 LEADERBOARD = "leaderboard" #identify and check if the user is in the leaderboard menu
 sort_ascending = False      #controls how the leaderboard should be sorted
 
+#current game state and player info
 current_state = LOGIN       #This variable records the game's current status , the program will always start with LOGIN
 current_player = ""         #this variable initialize the username as empty space so it let the user put its own
 current_score = 0           #this variable is basically the score of the player everytime he starts a game
 
+#initialize pygame
 pygame.init()
 
+#Screen and game setup
 
 WIDTH, HEIGHT = 800, 600
 FPS = 60
@@ -48,16 +54,6 @@ pygame.display.set_caption("Zombie Shooter Game")
 clock = pygame.time.Clock()
 
 #function to load image from local disk
-def load_image(filename, size=None):
-    try:
-        image_path = os.path.join('assets', 'sprites', filename)  # Update the folder path where images are stored
-        image = pygame.image.load(image_path).convert_alpha()
-        if size:
-            image = pygame.transform.scale(image, size)
-        return image
-    except pygame.error as e:
-        print(f"Error loading image: {e}")
-        return pygame.Surface(size or (50, 50))
 
 #add images from disk local
 background = load_image('background.png', (WIDTH, HEIGHT))
@@ -156,6 +152,13 @@ while running:
 
         if not (0 <= bullet["x"] <= WIDTH and 0 <= bullet["y"] <= HEIGHT):
             bullets.remove(bullet)
+
+        else:
+            # Rotate bullet based on direction
+            rotated_bullet = pygame.transform.rotate(bullet_img, angle)
+            bullet_rect = rotated_bullet.get_rect(center=(bullet["x"], bullet["y"]))
+            screen.blit(rotated_bullet, bullet_rect)
+
 
 
 
