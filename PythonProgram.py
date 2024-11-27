@@ -161,6 +161,14 @@ def update_leaderboard(username, score):
     leaderboard = leaderboard[:10]  # Keep only top 10
     save_leaderboard(leaderboard)
 
+# Create menu buttons
+main_menu_buttons = [
+    Button(WIDTH // 2 - 100, HEIGHT // 2 - 50, 200, 50, "Play"),
+    Button(WIDTH // 2 - 100, HEIGHT // 2 + 20, 200, 50, "Leaderboard"),
+    Button(WIDTH // 2 - 100, HEIGHT // 2 + 90, 200, 50, "Quit")
+]
+
+
 
 
 
