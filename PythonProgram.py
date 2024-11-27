@@ -232,10 +232,20 @@ def draw_leaderboard():
     global sort_ascending
     screen.fill(BLACK)
 
-# Draw title
-title = title_font.render("Leaderboard", True, WHITE)
-title_rect = title.get_rect(center=(WIDTH // 2, 50))
-screen.blit(title, title_rect)
+    # Draw title
+    title = title_font.render("Leaderboard", True, WHITE)
+    title_rect = title.get_rect(center=(WIDTH // 2, 50))
+    screen.blit(title, title_rect)
+
+    # Draw sort order indicator
+    sort_text = menu_font.render(
+        "Sort: " + ("Lowest to Highest" if sort_ascending else "Highest to Lowest"),
+        True,
+        WHITE
+    )
+    sort_rect = sort_text.get_rect(center=(WIDTH // 2, 100))
+    screen.blit(sort_text, sort_rect)
+
 
 
 
