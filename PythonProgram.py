@@ -353,6 +353,16 @@ while running:
                         zombie["rect"] = rotated_zombie.get_rect(center=(zombie["x"], zombie["y"]))
                         screen.blit(rotated_zombie, zombie["rect"])
 
+                        # Collision with soldier
+                        if soldier_rect.colliderect(zombie["rect"]):
+                            health -= 1
+                            zombies.remove(zombie)
+                            if health <= 0:
+                                current_score = score
+                                update_leaderboard(current_player, current_score)
+                                current_state = GAME_OVER
+
+
 
 
 
