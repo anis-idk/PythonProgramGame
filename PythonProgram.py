@@ -131,6 +131,12 @@ while running:
     soldier_rect.x = max(0, min(WIDTH - soldier_rect.width, soldier_rect.x))
     soldier_rect.y = max(0, min(HEIGHT - soldier_rect.height, soldier_rect.y))
 
+    # Mouse position and angle
+    mouse_x, mouse_y = pygame.mouse.get_pos()
+    angle = math.degrees(math.atan2(-(mouse_y - soldier_rect.centery), mouse_x - soldier_rect.centerx))
+
+
+
 
 
 
