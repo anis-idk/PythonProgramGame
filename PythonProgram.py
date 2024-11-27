@@ -151,6 +151,9 @@ while running:
 
     # Update bullets
     for bullet in bullets[:]:
+        bullet["x"] += bullet["dx"] * bullet_speed
+        bullet["y"] += bullet["dy"] * bullet_speed
+
 
 
 
