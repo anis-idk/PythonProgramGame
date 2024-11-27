@@ -228,6 +228,11 @@ def draw_game_over():
         button.draw(screen)
 
 
+def draw_leaderboard():
+    global sort_ascending
+    screen.fill(BLACK)
+
+
 
 
 
