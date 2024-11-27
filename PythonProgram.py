@@ -190,6 +190,20 @@ def draw_login_screen():
     title_rect = title.get_rect(center=(WIDTH // 2, HEIGHT // 3))
     screen.blit(title, title_rect)
 
+    pygame.draw.rect(screen, WHITE if input_active else GRAY, input_box, 2)
+    text_surface = font.render(input_text, True, WHITE)
+    width = max(200, text_surface.get_width() + 10)
+    input_box.w = width
+    screen.blit(text_surface, (input_box.x + 5, input_box.y + 5))
+
+    prompt = font.render("Enter your username:", True, WHITE)
+    prompt_rect = prompt.get_rect(center=(WIDTH // 2, HEIGHT // 2 - 30))
+    screen.blit(prompt, prompt_rect)
+
+
+
+
+
 
 
 
