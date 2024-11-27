@@ -265,6 +265,15 @@ def draw_leaderboard():
             button.draw(screen)
 
 
+def reset_game():
+    global health, score, zombies, bullets
+    health = 3
+    score = 0
+    zombies = []
+    bullets = []
+    soldier_rect.center = (WIDTH // 2, HEIGHT // 2)
+
+
 
 
 
