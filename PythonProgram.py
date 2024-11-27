@@ -54,6 +54,17 @@ pygame.display.set_caption("Zombie Shooter Game")
 clock = pygame.time.Clock()
 
 #function to load image from local disk
+def load_image(filename, size=None):
+    try:
+        image_path = os.path.join('assets', 'sprites', filename)  # Update the folder path where images are stored
+        image = pygame.image.load(image_path).convert_alpha()
+        if size:
+            image = pygame.transform.scale(image, size)
+        return image
+    except pygame.error as e:
+        print(f"Error loading image: {e}")
+        return pygame.Surface(size or (50, 50))  # Return a placeholder image if loading fails
+
 
 #add images from disk local
 background = load_image('background.png', (WIDTH, HEIGHT))
