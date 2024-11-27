@@ -333,6 +333,21 @@ while running:
                     bullet_rect = rotated_bullet.get_rect(center=(bullet["x"], bullet["y"]))
                     screen.blit(rotated_bullet, bullet_rect)
 
+                # Spawn zombies with cooldown
+                if time.time() - last_zombie_spawn_time > zombie_spawn_cooldown:
+                    spawn_zombie()
+                    last_zombie_spawn_time = time.time()
+
+                # Update zombies
+                    for zombie in zombies[:]:
+                        dx = soldier_rect.centerx - zombie["x"]
+                        dy = soldier_rect.centery - zombie["y"]
+                        dist = math.hypot(dx, dy)
+                        zombie["x"] += (dx / dist) * zombie_speed
+                        zombie["y"] += (dy / dist) * zombie_speed
+
+
+
 
 
 
