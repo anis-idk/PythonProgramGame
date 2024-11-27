@@ -307,6 +307,14 @@ while running:
                 mouse_x, mouse_y = pygame.mouse.get_pos()
                 angle = math.degrees(math.atan2(-(mouse_y - soldier_rect.centery), mouse_x - soldier_rect.centerx))
 
+                # Rotate soldier
+                rotated_soldier = pygame.transform.rotate(soldier, angle)
+                soldier_pos = rotated_soldier.get_rect(center=soldier_rect.center)
+                screen.blit(rotated_soldier, soldier_pos)
+
+
+
+
 
 
 
