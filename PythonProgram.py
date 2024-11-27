@@ -79,6 +79,7 @@ bullets = []
 bullet_speed = 10
 last_shot = 0
 shoot_cooldown = 0.5
+
 #zombies settings
 zombies = []
 zombie_speed = 1
@@ -86,6 +87,7 @@ last_zombie_spawn_time = 0
 zombie_spawn_cooldown = 1
 
 #health and score setup
+
 health = 3
 score = 0
 font = pygame.font.SysFont("Arial", 24)
@@ -114,71 +116,6 @@ def spawn_zombie():
         "angle": 0,
     }
     zombies.append(zombie)
-
-#Main Game Loop
-running = True
-while running:
-    screen.blit(background, (0, 0))
-#check quit event to close the game
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-
-#keys for soldier movements
-    keys = pygame.key.get_pressed()
-    if keys[pygame.K_w]:
-        soldier_rect.y -= 3
-    if keys[pygame.K_s]:
-        soldier_rect.y += 3
-    if keys[pygame.K_a]:
-        soldier_rect.x -= 3
-    if keys[pygame.K_d]:
-        soldier_rect.x += 3
-
-    soldier_rect.x = max(0, min(WIDTH - soldier_rect.width, soldier_rect.x))
-    soldier_rect.y = max(0, min(HEIGHT - soldier_rect.height, soldier_rect.y))
-
-    # Mouse position and angle
-    mouse_x, mouse_y = pygame.mouse.get_pos()
-    angle = math.degrees(math.atan2(-(mouse_y - soldier_rect.centery), mouse_x - soldier_rect.centerx))
-
-    # Rotate soldier
-    rotated_soldier = pygame.transform.rotate(soldier, angle)
-    soldier_pos = rotated_soldier.get_rect(center=soldier_rect.center)
-    screen.blit(rotated_soldier, soldier_pos)
-
-    # Shooting bullets
-    if keys[pygame.K_SPACE] and time.time() - last_shot > shoot_cooldown:
-        bullet_dx = math.cos(math.radians(angle))
-        bullet_dy = -math.sin(math.radians(angle))
-        bullet_x = soldier_rect.centerx + 30 * bullet_dx
-        bullet_y = soldier_rect.centery + 10 * bullet_dy
-        bullets.append({"x": bullet_x, "y": bullet_y, "dx": bullet_dx, "dy": bullet_dy})
-        last_shot = time.time()
-
-    # Update bullets
-    for bullet in bullets[:]:
-        bullet["x"] += bullet["dx"] * bullet_speed
-        bullet["y"] += bullet["dy"] * bullet_speed
-
-        if not (0 <= bullet["x"] <= WIDTH and 0 <= bullet["y"] <= HEIGHT):
-            bullets.remove(bullet)
-
-        else:
-            # Rotate bullet based on direction
-            rotated_bullet = pygame.transform.rotate(bullet_img, angle)
-            bullet_rect = rotated_bullet.get_rect(center=(bullet["x"], bullet["y"]))
-            screen.blit(rotated_bullet, bullet_rect)
-
-
-
-
-
-
-
-
-
-
 
 
 
