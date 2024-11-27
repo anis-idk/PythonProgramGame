@@ -155,6 +155,7 @@ while running:
         bullet["y"] += bullet["dy"] * bullet_speed
 
         if not (0 <= bullet["x"] <= WIDTH and 0 <= bullet["y"] <= HEIGHT):
+            bullets.remove(bullet)
 
 
 
