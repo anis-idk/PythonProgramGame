@@ -140,6 +140,15 @@ class Button:
             return True
         return False
 
+# Load and save leaderboard
+def load_leaderboard():
+    try:
+        with open('leaderboard.json', 'r') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return []
+
+
 
 
 
