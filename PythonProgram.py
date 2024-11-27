@@ -232,6 +232,12 @@ def draw_leaderboard():
     global sort_ascending
     screen.fill(BLACK)
 
+# Draw title
+title = title_font.render("Leaderboard", True, WHITE)
+title_rect = title.get_rect(center=(WIDTH // 2, 50))
+screen.blit(title, title_rect)
+
+
 
 
 
