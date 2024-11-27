@@ -206,6 +206,9 @@ def draw_main_menu():
     title = title_font.render("Zombie Shooter", True, WHITE)
     title_rect = title.get_rect(center=(WIDTH // 2, HEIGHT // 4))
     screen.blit(title, title_rect)
+    for button in main_menu_buttons:
+        button.draw(screen)
+
 
 
 
