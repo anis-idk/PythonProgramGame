@@ -85,11 +85,11 @@ def load_image(filename, size=None):
 
 
 #add images from disk local
-background = load_image('background.png', (WIDTH, HEIGHT))
-soldier = load_image('survivor-idle_shotgun.png', (50, 50))
-bullet_img = load_image('yellow-ball-3d.png', (15, 15))
-zombie_img = load_image('skeleton-attack.png', (50, 50))
-heart_img = load_image('heart.png', (40, 40))
+background = load_image('background.png', (WIDTH, HEIGHT))      #setting the background image to a specified size
+soldier = load_image('survivor-idle_shotgun.png', (50, 50))     #load soldier image from disk
+bullet_img = load_image('yellow-ball-3d.png', (15, 15))         #load the bullet from the disk
+zombie_img = load_image('skeleton-attack.png', (50, 50))        #load zombie image from the disk
+heart_img = load_image('heart.png', (40, 40))                   #load heart image from the disk
 
 #soldier and bullet settings
 soldier_rect = soldier.get_rect(center=(WIDTH // 2, HEIGHT // 2))
