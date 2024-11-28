@@ -424,7 +424,7 @@ while running:
                     elif i == 1:  # Main Menu
                         current_state = MAIN_MENU
 
-        draw_leaderboard()
+        draw_game_over()
 
     pygame.display.flip()
     clock.tick(FPS)
