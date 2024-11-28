@@ -160,29 +160,29 @@ class Button:
 # Load and save leaderboard
 def load_leaderboard():
     try:
-        with open('leaderboard.json', 'r') as f:
+        with open('leaderboard.json', 'r') as f:  #trying reading the json file
             return json.load(f)
-    except FileNotFoundError:
+    except FileNotFoundError:                 #if there is jason file or no data in jason file , return an empty leadearboard
         return []
 
 def save_leaderboard(leaderboard):
     # Sort before saving (always save in descending order)
     leaderboard.sort(key=lambda x: x['score'], reverse=True)
-    with open('leaderboard.json', 'w') as f:
+    with open('leaderboard.json', 'w') as f: # writing the sorted leaderboard to leaderboard.json
         json.dump(leaderboard, f)
 
 def update_leaderboard(username, score):
     leaderboard = load_leaderboard()
-    leaderboard.append({"username": username, "score": score})
-    leaderboard.sort(key=lambda x: x["score"], reverse=True)
-    leaderboard = leaderboard[:10]  # Keep only top 10
-    save_leaderboard(leaderboard)
+    leaderboard.append({"username": username, "score": score})   #display the username with its score
+    leaderboard.sort(key=lambda x: x["score"], reverse=True)     #sorting the leaderboard
+    leaderboard = leaderboard[:10]  # Keep only top 10           #keep the top 10 best players
+    save_leaderboard(leaderboard)   #save the leaderboard in json file
 
 # Create menu buttons
 main_menu_buttons = [
-    Button(WIDTH // 2 - 100, HEIGHT // 2 - 50, 200, 50, "Play"),
-    Button(WIDTH // 2 - 100, HEIGHT // 2 + 20, 200, 50, "Leaderboard"),
-    Button(WIDTH // 2 - 100, HEIGHT // 2 + 90, 200, 50, "Quit")
+    Button(WIDTH // 2 - 100, HEIGHT // 2 - 50, 200, 50, "Play"),   #play button in main menu
+    Button(WIDTH // 2 - 100, HEIGHT // 2 + 20, 200, 50, "Leaderboard"),#leaderboard button in main menu
+    Button(WIDTH // 2 - 100, HEIGHT // 2 + 90, 200, 50, "Quit")#quit button in main menu
 ]
 
 game_over_buttons = [
