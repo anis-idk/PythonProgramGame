@@ -451,6 +451,7 @@ while running:
         draw_game_over()
 
     elif current_state == LEADERBOARD:
+        stop_music()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
