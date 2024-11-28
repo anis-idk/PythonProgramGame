@@ -394,6 +394,8 @@ while running:
                     else:
                         input_text += event.unicode
 
+        draw_login_screen()
+
 
 
 
