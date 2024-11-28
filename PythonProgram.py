@@ -20,11 +20,11 @@ def play_music():
 
 # Function to stop background music
 def stop_music():
-    pygame.mixer.music.stop()
+    pygame.mixer.music.stop()              #Stop the music playing
 
 # Function to play a sound effect (zombie dying)
 def play_sound_effect(sound):
-    sound_effect = pygame.mixer.Sound(sound)
+    sound_effect = pygame.mixer.Sound(sound)             #
     sound_effect.play()
 
 #Screen and game setup
@@ -65,11 +65,11 @@ pygame.init()
 
 #Screen and game setup
 
-WIDTH, HEIGHT = 800, 600
-FPS = 60
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Zombie Shooter Game")
-clock = pygame.time.Clock()
+WIDTH, HEIGHT = 800, 600                                #setting the width and the height of the screen
+fps = 60                                                #number of frame rate which let the game run smoothly
+SurfaceType = pygame.display.set_mode((WIDTH, HEIGHT))  #set the pygame program to the width and height initialized
+pygame.display.set_caption("Zombie Shooter Game")       #display the title game in the window program
+Clock = pygame.time.Clock()
 
 #function to load image from local disk
 def load_image(filename, size=None):
@@ -77,7 +77,7 @@ def load_image(filename, size=None):
         image_path = os.path.join('assets', 'sprites', filename)  # Update the folder path where images are stored
         image = pygame.image.load(image_path).convert_alpha()
         if size:
-            image = pygame.transform.scale(image, size)
+            image = pygame.transform.scale(image, size)            #scale the image to the given dimension if the size is specified
         return image
     except pygame.error as e:
         print(f"Error loading image: {e}")
@@ -107,7 +107,7 @@ zombie_spawn_cooldown = 0.60   #spawn zombie every frame per second
 #health and score setup
 health = 3  # starting with 3 hearts
 score = 0   # starting with a score of 0
-font = pygame.font.SysFont("Arial", 24)
+Font = pygame.font.SysFont("Arial", 24)
 health_x, health_y = 10, 10   #position of the hearts
 
 
