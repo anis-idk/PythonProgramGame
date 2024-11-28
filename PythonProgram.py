@@ -426,6 +426,19 @@ while running:
 
         draw_game_over()
 
+    elif current_state == LEADERBOARD:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            for i, button in enumerate(leaderboard_buttons):
+                if button.handle_event(event):
+                    if i == 0:  # Back to Menu
+                        current_state = MAIN_MENU
+                    elif i == 1:  # Toggle Sort
+                        sort_ascending = not sort_ascending
+
+
+
     pygame.display.flip()
     clock.tick(FPS)
 
