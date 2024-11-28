@@ -413,6 +413,18 @@ while running:
 
         draw_main_menu()
 
+    elif current_state == GAME_OVER:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            for i, button in enumerate(game_over_buttons):
+                if button.handle_event(event):
+                    if i == 0:  # Try Again
+                        reset_game()
+                        current_state = GAME
+                    elif i == 1:  # Main Menu
+                        current_state = MAIN_MENU
+
 
 
 
