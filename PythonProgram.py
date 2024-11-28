@@ -374,6 +374,10 @@ while running:
         for i in range(health):
             screen.blit(heart_img, (health_x + i * (heart_img.get_width() + 10), health_y))
 
+        # Display Score
+        score_text = font.render(f"Score: {score}", True, WHITE)
+        screen.blit(score_text, (health_x, health_y + heart_img.get_height() + 10))
+
 
 
 
