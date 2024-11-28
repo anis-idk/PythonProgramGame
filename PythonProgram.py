@@ -75,13 +75,13 @@ Clock = pygame.time.Clock()
 def load_image(filename, size=None):
     try:
         image_path = os.path.join('assets', 'sprites', filename)  # Update the folder path where images are stored
-        image = pygame.image.load(image_path).convert_alpha()
+        image = pygame.image.load(image_path).convert_alpha()     #load the image from the updated and specified math
         if size:
             image = pygame.transform.scale(image, size)            #scale the image to the given dimension if the size is specified
         return image
     except pygame.error as e:
-        print(f"Error loading image: {e}")
-        return pygame.Surface(size or (50, 50))  # Return a placeholder image if loading fails
+        print(f"Error loading image: {e}")                         #print an error message if there is an error
+        return pygame.Surface(size or (50, 50))                    # Return a placeholder image if loading fails
 
 
 #add images from disk local
