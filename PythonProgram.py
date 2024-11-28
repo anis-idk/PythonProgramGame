@@ -20,6 +20,7 @@ def play_music():
 
 # Function to stop background music
 def stop_music():
+    pygame.mixer.music.stop()
 
 #Screen and game setup
 WIDTH, HEIGHT = 800, 600                          #defines the dimensions of the screen
