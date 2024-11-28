@@ -11,7 +11,7 @@ pygame.font.init()                                #initialize the font module
 
 # Load the music
 game_music = "game_music.wav"  # Replace with the actual path to your music file
-
+Zombie_hit = "zombie_die.wav"  # Sound for zombie death, change path as necessary
 
 #Screen and game setup
 WIDTH, HEIGHT = 800, 600                          #defines the dimensions of the screen
