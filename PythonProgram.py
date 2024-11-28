@@ -425,6 +425,8 @@ while running:
                     elif i == 1:  # Main Menu
                         current_state = MAIN_MENU
 
+        draw_leaderboard()
+
 
 
 
