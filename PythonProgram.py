@@ -437,6 +437,7 @@ while running:
                     elif i == 1:  # Toggle Sort
                         sort_ascending = not sort_ascending
 
+        draw_leaderboard()
 
 
     pygame.display.flip()
