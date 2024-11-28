@@ -112,27 +112,27 @@ health_x, health_y = 10, 10                             #position of the hearts
 
 
 def spawn_zombie():
-    edge = random.choice(['top', 'bottom', 'left', 'right'])
-    if edge == 'top':
-        x = random.randint(0, WIDTH)
+    edge = random.choice(['top', 'bottom', 'left', 'right'])       #a list with the 4 edges of the screen
+    if edge == 'top':                                              #if the zombie spawn on top side of screen
+        x = random.randint(0, WIDTH)                            #take a random position
         y = 0
-    elif edge == 'bottom':
-        x = random.randint(0, WIDTH)
+    elif edge == 'bottom':                                         #if the zombie spawns on bottom of the screen
+        x = random.randint(0, WIDTH)                            #take a random position of the bottom side screen
         y = HEIGHT
-    elif edge == 'left':
-        x = 0
+    elif edge == 'left':                                           #if the zombie spawns on left of the screen
+        x = 0                                                      #take a random position of the left side of screen
         y = random.randint(0, HEIGHT)
-    elif edge == 'right':
-        x = WIDTH
+    elif edge == 'right':                                          #if the zombie spawns on right of the screen
+        x = WIDTH                                                  #take a random position of the right side of the screen
         y = random.randint(0, HEIGHT)
 
     zombie = {
-        "x": x,
-        "y": y,
-        "rect": zombie_img.get_rect(center=(x, y)),
-        "angle": 0,
+        "x": x,                                                   #x position of the zombie
+        "y": y,                                                   #y position of the zombie
+        "rect": zombie_img.get_rect(center=(x, y)),               #colision of the zombie in it center
+        "angle": 0,                                               #starting angle of zombie
     }
-    zombies.append(zombie)
+    zombies.append(zombie)                                        #adding zombie in the empty list
 
 # Button class for menu items
 class Button:
