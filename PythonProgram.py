@@ -9,6 +9,10 @@ import json    #Used for to store data (saved data) , used especially for leader
 pygame.init()                                     #launches every Pygame like the sounds, graphics modules...
 pygame.font.init()                                #initialize the font module
 
+# Load the music
+game_music = "game_music.wav"  # Replace with the actual path to your music file
+
+
 #Screen and game setup
 WIDTH, HEIGHT = 800, 600                          #defines the dimensions of the screen
 FPS = 60                                          #frame rate per second
