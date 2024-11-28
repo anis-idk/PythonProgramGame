@@ -370,6 +370,11 @@ while running:
                     bullets.remove(bullet)
                     score += 1
 
+        # Draw hearts (health)
+        for i in range(health):
+            screen.blit(heart_img, (health_x + i * (heart_img.get_width() + 10), health_y))
+
+
 
 
 
