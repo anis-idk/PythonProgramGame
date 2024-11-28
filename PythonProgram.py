@@ -11,7 +11,10 @@ pygame.font.init()                                #initialize the font module
 
 # Load the music
 game_music = "game_music.wav"  # Replace with the actual path to your music file
-Zombie_hit = "zombie_die.wav"  # Sound for zombie death, change path as necessary
+Zombie_hit = "Zombie_hit.wav"  # Sound for zombie death, change path as necessary
+
+# Function to play background music
+def play_music():
 
 #Screen and game setup
 WIDTH, HEIGHT = 800, 600                          #defines the dimensions of the screen
@@ -372,6 +375,7 @@ while running:
                     zombies.remove(zombie)
                     bullets.remove(bullet)
                     score += 1
+
 
         # Draw hearts (health)
         for i in range(health):
