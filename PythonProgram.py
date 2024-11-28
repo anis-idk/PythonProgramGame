@@ -378,6 +378,22 @@ while running:
         score_text = font.render(f"Score: {score}", True, WHITE)
         screen.blit(score_text, (health_x, health_y + heart_img.get_height() + 10))
 
+    elif current_state == LOGIN:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                input_active = input_box.collidepoint(event.pos)
+            elif event.type == pygame.KEYDOWN:
+                if input_active:
+                    if event.key == pygame.K_RETURN and input_text.strip():
+                        current_player = input_text
+                        current_state = MAIN_MENU
+                    elif event.key == pygame.K_BACKSPACE:
+                        input_text = input_text[:-1]
+                    else:
+                        input_text += event.unicode
+
 
 
 
