@@ -22,6 +22,11 @@ def play_music():
 def stop_music():
     pygame.mixer.music.stop()
 
+# Function to play a sound effect (zombie dying)
+def play_sound_effect(sound):
+    sound_effect = pygame.mixer.Sound(sound)
+    sound_effect.play()
+
 #Screen and game setup
 WIDTH, HEIGHT = 800, 600                          #defines the dimensions of the screen
 FPS = 60                                          #frame rate per second
