@@ -296,6 +296,7 @@ def reset_game():
 running = True
 while running:
     if current_state == GAME:
+        if not pygame.mixer.music.get_busy():  # If no music is playing
         screen.blit(background, (0, 0))
 
         # Handle events
