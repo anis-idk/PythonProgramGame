@@ -206,6 +206,7 @@ def draw_main_menu():
     title = title_font.render("Zombie Shooter", True, WHITE)
     title_rect = title.get_rect(center=(WIDTH // 2, HEIGHT // 4))
     screen.blit(title, title_rect)
+
     for button in main_menu_buttons:
         button.draw(screen)
 
@@ -260,9 +261,9 @@ def draw_leaderboard():
         rect = text.get_rect(center=(WIDTH // 2, 150 + i * 40))
         screen.blit(text, rect)
 
-        # Draw buttons
-        for button in leaderboard_buttons:
-            button.draw(screen)
+    # Draw buttons
+    for button in leaderboard_buttons:
+        button.draw(screen)
 
 
 def reset_game():
@@ -288,38 +289,38 @@ while running:
                 if event.key == pygame.K_ESCAPE:
                     current_state = MAIN_MENU
 
-                # Get keys for movement
-                keys = pygame.key.get_pressed()
-                if keys[pygame.K_w]:
-                    soldier_rect.y -= 3
-                if keys[pygame.K_s]:
-                    soldier_rect.y += 3
-                if keys[pygame.K_a]:
-                    soldier_rect.x -= 3
-                if keys[pygame.K_d]:
-                    soldier_rect.x += 3
+        # Get keys for movement
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_w]:
+            soldier_rect.y -= 3
+        if keys[pygame.K_s]:
+            soldier_rect.y += 3
+        if keys[pygame.K_a]:
+            soldier_rect.x -= 3
+        if keys[pygame.K_d]:
+            soldier_rect.x += 3
 
-                # Keep soldier on screen
-                soldier_rect.x = max(0, min(WIDTH - soldier_rect.width, soldier_rect.x))
-                soldier_rect.y = max(0, min(HEIGHT - soldier_rect.height, soldier_rect.y))
+        # Keep soldier on screen
+        soldier_rect.x = max(0, min(WIDTH - soldier_rect.width, soldier_rect.x))
+        soldier_rect.y = max(0, min(HEIGHT - soldier_rect.height, soldier_rect.y))
 
-                # Mouse position and angle
-                mouse_x, mouse_y = pygame.mouse.get_pos()
-                angle = math.degrees(math.atan2(-(mouse_y - soldier_rect.centery), mouse_x - soldier_rect.centerx))
+        # Mouse position and angle
+        mouse_x, mouse_y = pygame.mouse.get_pos()
+        angle = math.degrees(math.atan2(-(mouse_y - soldier_rect.centery), mouse_x - soldier_rect.centerx))
 
-                # Rotate soldier
-                rotated_soldier = pygame.transform.rotate(soldier, angle)
-                soldier_pos = rotated_soldier.get_rect(center=soldier_rect.center)
-                screen.blit(rotated_soldier, soldier_pos)
+        # Rotate soldier
+        rotated_soldier = pygame.transform.rotate(soldier, angle)
+        soldier_pos = rotated_soldier.get_rect(center=soldier_rect.center)
+        screen.blit(rotated_soldier, soldier_pos)
 
-                # Shooting bullets
-                if keys[pygame.K_SPACE] and time.time() - last_shot > shoot_cooldown:
-                    bullet_dx = math.cos(math.radians(angle))
-                    bullet_dy = -math.sin(math.radians(angle))
-                    bullet_x = soldier_rect.centerx + 30 * bullet_dx
-                    bullet_y = soldier_rect.centery + 10 * bullet_dy
-                    bullets.append({"x": bullet_x, "y": bullet_y, "dx": bullet_dx, "dy": bullet_dy})
-                    last_shot = time.time()
+        # Shooting bullets
+        if keys[pygame.K_SPACE] and time.time() - last_shot > shoot_cooldown:
+            bullet_dx = math.cos(math.radians(angle))
+            bullet_dy = -math.sin(math.radians(angle))
+            bullet_x = soldier_rect.centerx + 30 * bullet_dx
+            bullet_y = soldier_rect.centery + 10 * bullet_dy
+            bullets.append({"x": bullet_x, "y": bullet_y, "dx": bullet_dx, "dy": bullet_dy})
+            last_shot = time.time()
 
                 # Update bullets
                 for bullet in bullets[:]:
