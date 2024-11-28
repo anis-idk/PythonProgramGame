@@ -397,6 +397,21 @@ while running:
         draw_login_screen()
 
 
+    elif current_state == MAIN_MENU:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            for i, button in enumerate(main_menu_buttons):
+                if button.handle_event(event):
+                    if i == 0:  # Play
+                        reset_game()
+                        current_state = GAME
+                    elif i == 1:  # Leaderboard
+                        current_state = LEADERBOARD
+                    elif i == 2:  # Quit
+                        running = False
+
+
 
 
 
