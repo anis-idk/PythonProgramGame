@@ -340,35 +340,37 @@ while running:
             last_zombie_spawn_time = time.time()
 
         # Update zombies
-            for zombie in zombies[:]:
-                dx = soldier_rect.centerx - zombie["x"]
-                dy = soldier_rect.centery - zombie["y"]
-                dist = math.hypot(dx, dy)
-                zombie["x"] += (dx / dist) * zombie_speed
-                zombie["y"] += (dy / dist) * zombie_speed
+        for zombie in zombies[:]:
+            dx = soldier_rect.centerx - zombie["x"]
+            dy = soldier_rect.centery - zombie["y"]
+            dist = math.hypot(dx, dy)
+            zombie["x"] += (dx / dist) * zombie_speed
+            zombie["y"] += (dy / dist) * zombie_speed
 
-                        angle_to_soldier = math.degrees(math.atan2(-dy, dx))
-                        zombie["angle"] = angle_to_soldier
+            angle_to_soldier = math.degrees(math.atan2(-dy, dx))
+            zombie["angle"] = angle_to_soldier
 
-                        rotated_zombie = pygame.transform.rotate(zombie_img, zombie["angle"])
-                        zombie["rect"] = rotated_zombie.get_rect(center=(zombie["x"], zombie["y"]))
-                        screen.blit(rotated_zombie, zombie["rect"])
+            rotated_zombie = pygame.transform.rotate(zombie_img, zombie["angle"])
+            zombie["rect"] = rotated_zombie.get_rect(center=(zombie["x"], zombie["y"]))
+            screen.blit(rotated_zombie, zombie["rect"])
 
-                        # Collision with soldier
-                        if soldier_rect.colliderect(zombie["rect"]):
-                            health -= 1
-                            zombies.remove(zombie)
-                            if health <= 0:
-                                current_score = score
-                                update_leaderboard(current_player, current_score)
-                                current_state = GAME_OVER
+            # Collision with soldier
+            if soldier_rect.colliderect(zombie["rect"]):
+                health -= 1
+                zombies.remove(zombie)
+                if health <= 0:
+                    current_score = score
+                    update_leaderboard(current_player, current_score)
+                    current_state = GAME_OVER
 
-                        # Collision with bullets
-                        for bullet in bullets[:]:
-                            if zombie["rect"].collidepoint(bullet["x"], bullet["y"]):
-                                zombies.remove(zombie)
-                                bullets.remove(bullet)
-                                score += 1
+            # Collision with bullets
+            for bullet in bullets[:]:
+                if zombie["rect"].collidepoint(bullet["x"], bullet["y"]):
+                    zombies.remove(zombie)
+                    bullets.remove(bullet)
+                    score += 1
+
+
 
 
 
