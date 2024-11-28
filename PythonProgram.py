@@ -419,6 +419,7 @@ while running:
 
 
     elif current_state == MAIN_MENU:
+        stop_music()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
