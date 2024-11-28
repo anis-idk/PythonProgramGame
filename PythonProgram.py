@@ -137,17 +137,17 @@ def spawn_zombie():
 # Button class for menu items
 class Button:
     def __init__(self, x, y, width, height, text):
-        self.rect = pygame.Rect(x, y, width, height)
-        self.text = text
-        self.is_hovered = False
+        self.rect = pygame.Rect(x, y, width, height)                #creating a rectangle for the button
+        self.text = text                                            #save and store the text of the button
+        self.is_hovered = False                     #boolean to check if the mouse is on the rectangle of the button
 
     def draw(self, surface):
-        color = GRAY if self.is_hovered else BLACK
-        pygame.draw.rect(surface, color, self.rect, border_radius=12)
+        color = GRAY if self.is_hovered else BLACK    #set the grey color for the button if the mouse is on it
+        pygame.draw.rect(surface, color, self.rect, border_radius=12)  #draw the button rectangle with rounded corners
         pygame.draw.rect(surface, WHITE, self.rect, 2, border_radius=12)
-        text_surface = menu_font.render(self.text, True, WHITE)
-        text_rect = text_surface.get_rect(center=self.rect.center)
-        surface.blit(text_surface, text_rect)
+        text_surface = menu_font.render(self.text, True, WHITE)  #render the button text
+        text_rect = text_surface.get_rect(center=self.rect.center) #center the text in the button
+        surface.blit(text_surface, text_rect) #draw the text onto the surface of rectangle
 
     def handle_event(self, event):
         if event.type == pygame.MOUSEMOTION:
