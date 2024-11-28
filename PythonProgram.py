@@ -18,6 +18,9 @@ def play_music():
     pygame.mixer.music.load(game_music)
     pygame.mixer.music.play(-1, 0.0)  # Play the music in a loop
 
+# Function to stop background music
+def stop_music():
+
 #Screen and game setup
 WIDTH, HEIGHT = 800, 600                          #defines the dimensions of the screen
 FPS = 60                                          #frame rate per second
