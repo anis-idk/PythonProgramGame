@@ -427,6 +427,11 @@ while running:
 
         draw_leaderboard()
 
+    pygame.display.flip()
+    clock.tick(FPS)
+
+pygame.quit()
+
 
 
 
