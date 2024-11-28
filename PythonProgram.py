@@ -411,6 +411,8 @@ while running:
                     elif i == 2:  # Quit
                         running = False
 
+        draw_main_menu()
+
 
 
 
