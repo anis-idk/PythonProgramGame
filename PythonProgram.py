@@ -150,11 +150,11 @@ class Button:
         surface.blit(text_surface, text_rect) #draw the text onto the surface of rectangle
 
     def handle_event(self, event):
-        if event.type == pygame.MOUSEMOTION:
+        if event.type == pygame.MOUSEMOTION:   #check if there is a mouse movement
             self.is_hovered = self.rect.collidepoint(event.pos)
             return False
         if event.type == pygame.MOUSEBUTTONDOWN and self.is_hovered:
-            return True
+            return True   #return true to say that a button has been clicked
         return False
 
 # Load and save leaderboard
