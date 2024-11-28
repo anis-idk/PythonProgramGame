@@ -81,17 +81,16 @@ last_shot = 0
 shoot_cooldown = 0.5
 
 #zombies setting
-zombies = []
-zombie_speed = 1
+zombies = []        #zombie empty list
+zombie_speed = 1    #zombie movement speed
 last_zombie_spawn_time = 0
-zombie_spawn_cooldown = 1
+zombie_spawn_cooldown = 1   #spawn zombie every frame per second
 
 #health and score setup
-
-health = 3
-score = 0
+health = 3  # starting with 3 hearts
+score = 0   # starting with a score of 0
 font = pygame.font.SysFont("Arial", 24)
-health_x, health_y = 10, 10
+health_x, health_y = 10, 10   #position of the hearts
 
 
 def spawn_zombie():
