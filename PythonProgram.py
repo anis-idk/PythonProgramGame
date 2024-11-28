@@ -186,19 +186,19 @@ main_menu_buttons = [
 ]
 
 game_over_buttons = [
-    Button(WIDTH // 2 - 100, HEIGHT // 2 + 20, 200, 50, "Try Again"),
-    Button(WIDTH // 2 - 100, HEIGHT // 2 + 90, 200, 50, "Main Menu")
+    Button(WIDTH // 2 - 100, HEIGHT // 2 + 20, 200, 50, "Try Again"), #try again button in game over screen
+    Button(WIDTH // 2 - 100, HEIGHT // 2 + 90, 200, 50, "Main Menu")  #main menu button in game over screen
 ]
 
 leaderboard_buttons = [
-    Button(WIDTH // 2 - 100, HEIGHT - 100, 200, 50, "Back to Menu"),
-    Button(WIDTH//2 - 100, HEIGHT - 160, 200, 50, "Toggle Sort")
+    Button(WIDTH // 2 - 100, HEIGHT - 100, 200, 50, "Back to Menu"), #main menu button in leaderboard screen
+    Button(WIDTH//2 - 100, HEIGHT - 160, 200, 50, "Toggle Sort")     #sorting button in leaderboard screen
 ]
 
 # Input box for username
-input_box = pygame.Rect(WIDTH // 2 - 100, HEIGHT // 2, 200, 32)
-input_text = ""
-input_active = False
+input_box = pygame.Rect(WIDTH // 2 - 100, HEIGHT // 2, 200, 32)  #box to enter user username
+input_text = ""  #empty space to let the user enter its username
+input_active = False  #boolean to check if the box is active
 
 
 def draw_login_screen():
