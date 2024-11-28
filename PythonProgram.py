@@ -15,6 +15,8 @@ Zombie_hit = "Zombie_hit.wav"  # Sound for zombie death, change path as necessar
 
 # Function to play background music
 def play_music():
+    pygame.mixer.music.load(game_music)
+    pygame.mixer.music.play(-1, 0.0)  # Play the music in a loop
 
 #Screen and game setup
 WIDTH, HEIGHT = 800, 600                          #defines the dimensions of the screen
