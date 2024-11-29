@@ -202,16 +202,16 @@ input_active = False  #boolean to check if the box is active
 
 
 def draw_login_screen():
-    screen.fill(BLACK)
-    title = title_font.render("Login", True, WHITE)
-    title_rect = title.get_rect(center=(WIDTH // 2, HEIGHT // 3))
-    screen.blit(title, title_rect)
+    screen.fill(BLACK)  #fill the login screen in black
+    title = title_font.render("Login", True, WHITE) # Use the title font to render the title text "Login" in white.
+    title_rect = title.get_rect(center=(WIDTH // 2, HEIGHT // 3))# Position the title text one-third of the way down the screen's height and centre it horizontally.
+    screen.blit(title, title_rect) # Draw the title text onto the screen at the specified position
 
     pygame.draw.rect(screen, WHITE if input_active else GRAY, input_box, 2)
-    text_surface = font.render(input_text, True, WHITE)
-    width = max(200, text_surface.get_width() + 10)
+    text_surface = font.render(input_text, True, WHITE)# Adapt the input box's width dynamically to the text, making sure it remains at least 200 pixels wide.
+    width = max(200, text_surface.get_width() + 10)# Modify the width attribute of the input box.
     input_box.w = width
-    screen.blit(text_surface, (input_box.x + 5, input_box.y + 5))
+    screen.blit(text_surface, (input_box.x + 5, input_box.y + 5)) # Place the produced text with a little margin inside the input field.
 
     prompt = font.render("Enter your username:", True, WHITE)
     prompt_rect = prompt.get_rect(center=(WIDTH // 2, HEIGHT // 2 - 30))
