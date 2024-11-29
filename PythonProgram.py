@@ -213,39 +213,39 @@ def draw_login_screen():
     input_box.w = width
     screen.blit(text_surface, (input_box.x + 5, input_box.y + 5)) # Place the produced text with a little margin inside the input field.
 
-    prompt = font.render("Enter your username:", True, WHITE)
+    prompt = font.render("Enter your username:", True, WHITE)# Adapt the input box's width dynamically to the text, making sure it remains at least 200 pixels wide.
     prompt_rect = prompt.get_rect(center=(WIDTH // 2, HEIGHT // 2 - 30))
-    screen.blit(prompt, prompt_rect)
+    screen.blit(prompt, prompt_rect)# At the determined location, draw the prompt text onto the screen.
 
 
 def draw_main_menu():
-    screen.fill(BLACK)
-    title = title_font.render("Zombie Shooter", True, WHITE)
+    screen.fill(BLACK)  #filling the screen main menu with black screen
+    title = title_font.render("Zombie Shooter", True, WHITE)#render the title text in the main menu
     title_rect = title.get_rect(center=(WIDTH // 2, HEIGHT // 4))
-    screen.blit(title, title_rect)
+    screen.blit(title, title_rect)#draw the title text in the main menu
 
     for button in main_menu_buttons:
         button.draw(screen)
 
-
+# Create a "Game Over" screen with a black backdrop and a red title towards the top.fill (BLACK)
 def draw_game_over():
     screen.fill(BLACK)
     title = title_font.render("Game Over", True, RED)
     title_rect = title.get_rect(center=(WIDTH // 2, HEIGHT // 4))
     screen.blit(title, title_rect)
-
+# Use white text to centre the name of the active player on the screen.
     score_text = menu_font.render(f"Player: {current_player}", True, WHITE)
     score_rect = score_text.get_rect(center=(WIDTH // 2, HEIGHT // 3))
     screen.blit(score_text, score_rect)
-
+    # Show the player's score in white lettering, centrally located just above the screen's centre.
     score_text = menu_font.render(f"Score: {current_score}", True, WHITE)
     score_rect = score_text.get_rect(center=(WIDTH // 2, HEIGHT // 2 - 50))
     screen.blit(score_text, score_rect)
-
+    # Use the game_over_buttons list to go through and draw every button on the game over screen.
     for button in game_over_buttons:
         button.draw(screen)
 
-
+# Display the leaderboard screen with a dark backdrop and the scores sorted globally.
 def draw_leaderboard():
     global sort_ascending
     screen.fill(BLACK)
