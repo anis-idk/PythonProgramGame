@@ -376,13 +376,13 @@ while running:
             screen.blit(rotated_zombie, zombie["rect"])# Draw the rotated zombie on the screen
 
             # Collision with soldier
-            if soldier_rect.colliderect(zombie["rect"]):
+            if soldier_rect.colliderect(zombie["rect"]):   #if soldier HitBox touches the zombies remove one heart
                 health -= 1
-                zombies.remove(zombie)
+                zombies.remove(zombie) #remove the zombie which touches the soldier
                 if health <= 0:
                     current_score = score
-                    update_leaderboard(current_player, current_score)
-                    current_state = GAME_OVER
+                    update_leaderboard(current_player, current_score)#draw the leaderboard with player username and its score
+                    current_state = GAME_OVER #show the gameover screen
 
             # Collision with bullets
             for bullet in bullets[:]:
