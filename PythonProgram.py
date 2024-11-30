@@ -60,11 +60,9 @@ current_state = LOGIN       #This variable records the game's current status , t
 current_player = ""         #this variable initialize the username as empty space so it let the user put its own
 current_score = 0           #this variable is basically the score of the player everytime he starts a game
 
-#initialize pygame
-pygame.init()
+
 
 #Screen and game setup
-
 WIDTH, HEIGHT = 800, 600                                #setting the width and the height of the screen
 fps = 60                                                #number of frame rate which let the game run smoothly
 SurfaceType = pygame.display.set_mode((WIDTH, HEIGHT))  #set the pygame program to the width and height initialized
