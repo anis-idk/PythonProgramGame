@@ -382,20 +382,20 @@ while running:
                 if health <= 0:
                     current_score = score
                     update_leaderboard(current_player, current_score)#draw the leaderboard with player username and its score
-                    current_state = GAME_OVER #show the gameover screen
+                    current_state = GAME_OVER #show the game over screen
 
             # Collision with bullets
-            for bullet in bullets[:]:
+            for bullet in bullets[:]: #loop through the bullet list
                 if zombie["rect"].collidepoint(bullet["x"], bullet["y"]):
-                    zombies.remove(zombie)
-                    bullets.remove(bullet)
-                    score += 1
-                    play_sound_effect(zombie_hit_sound)
+                    zombies.remove(zombie)#remove zombie if it is hit by a bullet
+                    bullets.remove(bullet)#remove the bullet
+                    score += 1#add 1 to score
+                    play_sound_effect(zombie_hit_sound)#play the sound effect when a zombie is hit
 
 
         # Draw hearts (health)
-        for i in range(health):
-            screen.blit(heart_img, (health_x + i * (heart_img.get_width() + 10), health_y))
+        for i in range(health):#loop through hearts
+            screen.blit(heart_img, (health_x + i * (heart_img.get_width() + 10), health_y))#draw the hearts with a special x and y position
 
         # Display Score
         score_text = font.render(f"Score: {score}", True, WHITE)
@@ -404,7 +404,7 @@ while running:
     elif current_state == LOGIN:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                running = False
+                running = False  #stop the program if the user stop the code
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 input_active = input_box.collidepoint(event.pos)
             elif event.type == pygame.KEYDOWN:
@@ -467,10 +467,10 @@ while running:
         draw_leaderboard()
 
 
-    pygame.display.flip()
-    clock.tick(FPS)
+    pygame.display.flip()  # Updates the full screen whenever something is changed.
+    clock.tick(FPS)    # Sets the frame rate limit to the set FPS.
 
-pygame.quit()
+pygame.quit() # Ends Pygame and closes the Pygame window
 
 
 
