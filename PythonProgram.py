@@ -255,23 +255,23 @@ def draw_leaderboard():
     title_rect = title.get_rect(center=(WIDTH // 2, 50))  #create a rectangle with rounded corners for the leaderboard button
     screen.blit(title, title_rect)
 
-    # Draw sort order indicator
+    # Draw sort order indicator if its from lowest to highest vice versa
     sort_text = menu_font.render(
         "Sort: " + ("Lowest to Highest" if sort_ascending else "Highest to Lowest"),
         True,
         WHITE
     )
-    sort_rect = sort_text.get_rect(center=(WIDTH // 2, 100))
-    screen.blit(sort_text, sort_rect)
+    sort_rect = sort_text.get_rect(center=(WIDTH // 2, 100)) #creating the sort text
+    screen.blit(sort_text, sort_rect)#displaying the sort text in the sort rectangle button
 
-    # Get and sort leaderboard
+    # Draw and sort leaderboard
     leaderboard = load_leaderboard()
     leaderboard.sort(key=lambda x: x['score'], reverse=not sort_ascending)
 
     # Draw entries
-    for i, entry in enumerate(leaderboard):
-        text = menu_font.render(
-            f"{i + 1}. {entry['username']}: {entry['score']}",
+    for i, entry in enumerate(leaderboard):# Loop through each entry in the leaderboard
+        text = menu_font.render(            # Create a text space for each entry
+            f"{i + 1}. {entry['username']}: {entry['score']}",# Format the text to show the score, rank, and username.
             True,
             WHITE
         )
@@ -343,16 +343,16 @@ while running:
             last_shot = time.time() #update the last bullet shot time with the current time
 
         # Update bullets
-        for bullet in bullets[:]:
-            bullet["x"] += bullet["dx"] * bullet_speed
-            bullet["y"] += bullet["dy"] * bullet_speed
+        for bullet in bullets[:]:# Loop through each bullet in the list
+            bullet["x"] += bullet["dx"] * bullet_speed# Move the bullet horizontally
+            bullet["y"] += bullet["dy"] * bullet_speed# Move the bullet vertically
 
             if not (0 <= bullet["x"] <= WIDTH and 0 <= bullet["y"] <= HEIGHT):
-                bullets.remove(bullet)
+                bullets.remove(bullet) #if the bullet is outside the screen , remove the bullet
             else:
-                rotated_bullet = pygame.transform.rotate(bullet_img, angle)
-                bullet_rect = rotated_bullet.get_rect(center=(bullet["x"], bullet["y"]))
-                screen.blit(rotated_bullet, bullet_rect)
+                rotated_bullet = pygame.transform.rotate(bullet_img, angle)# Rotate the bullet image
+                bullet_rect = rotated_bullet.get_rect(center=(bullet["x"], bullet["y"]))# Determine where the rotating bullet is.
+                screen.blit(rotated_bullet, bullet_rect)# Draw the rotated bullet on the screen
 
         # Spawn zombies with cooldown
         if time.time() - last_zombie_spawn_time > zombie_spawn_cooldown:
@@ -360,19 +360,19 @@ while running:
             last_zombie_spawn_time = time.time()
 
         # Update zombies
-        for zombie in zombies[:]:
-            dx = soldier_rect.centerx - zombie["x"]
-            dy = soldier_rect.centery - zombie["y"]
-            dist = math.hypot(dx, dy)
-            zombie["x"] += (dx / dist) * zombie_speed
-            zombie["y"] += (dy / dist) * zombie_speed
+        for zombie in zombies[:]:#looping throught each zombie
+            dx = soldier_rect.centerx - zombie["x"]#calculate the horizontal distance between the zombie and soldier
+            dy = soldier_rect.centery - zombie["y"]#calculate the vertical distance between the zombie and soldier
+            dist = math.hypot(dx, dy)#get the distance to the soldier
+            zombie["x"] += (dx / dist) * zombie_speed#move horizontally to the soldier
+            zombie["y"] += (dy / dist) * zombie_speed#move vertically towards the soldier
 
-            angle_to_soldier = math.degrees(math.atan2(-dy, dx))
-            zombie["angle"] = angle_to_soldier
+            angle_to_soldier = math.degrees(math.atan2(-dy, dx))#calculate the angle to the soldier
+            zombie["angle"] = angle_to_soldier#set and update the zombie angle to face directly the soldier
 
-            rotated_zombie = pygame.transform.rotate(zombie_img, zombie["angle"])
-            zombie["rect"] = rotated_zombie.get_rect(center=(zombie["x"], zombie["y"]))
-            screen.blit(rotated_zombie, zombie["rect"])
+            rotated_zombie = pygame.transform.rotate(zombie_img, zombie["angle"]) # Rotate the zombie image
+            zombie["rect"] = rotated_zombie.get_rect(center=(zombie["x"], zombie["y"]))# Set the zombie's position
+            screen.blit(rotated_zombie, zombie["rect"])# Draw the rotated zombie on the screen
 
             # Collision with soldier
             if soldier_rect.colliderect(zombie["rect"]):
