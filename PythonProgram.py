@@ -387,7 +387,7 @@ while running:
                     zombies.remove(zombie)
                     bullets.remove(bullet)
                     score += 1
-                    play_sound_effect(Zombie_hit)
+                    play_sound_effect(zombie_hit_sound)
 
 
         # Draw hearts (health)
