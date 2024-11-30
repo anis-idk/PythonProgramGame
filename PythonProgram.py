@@ -287,7 +287,7 @@ def reset_game():
     score = 0  #score reset at 0
     zombies = [] #zombie list empty
     bullets = [] #bullets list empty
-    soldier_rect.center = (WIDTH // 1, HEIGHT // 1)
+    soldier_rect.center = (WIDTH // 2, HEIGHT // 2)
 
 
 # Main Game Loop
