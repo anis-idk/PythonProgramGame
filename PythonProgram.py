@@ -68,7 +68,7 @@ current_score = 0           #this variable is basically the score of the player 
 #Screen and game setup
 WIDTH, HEIGHT = 800, 600                                #setting the width and the height of the screen
 fps = 60                                                #number of frame rate which let the game run smoothly
-SurfaceType = pygame.display.set_mode((WIDTH, HEIGHT))  #set the pygame program to the width and height initialized
+surface_type = pygame.display.set_mode((WIDTH, HEIGHT))  #set the pygame program to the width and height initialized
 pygame.display.set_caption("Zombie Shooter Game")       #display the title game in the window program
 Clock = pygame.time.Clock()
 
