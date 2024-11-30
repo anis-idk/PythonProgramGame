@@ -250,9 +250,9 @@ def draw_leaderboard():
     global sort_ascending
     screen.fill(BLACK)
 
-    # Draw title
-    title = title_font.render("Leaderboard", True, WHITE)
-    title_rect = title.get_rect(center=(WIDTH // 2, 50))
+    
+    title = title_font.render("Leaderboard", True, WHITE) #render a title for leaderboard button
+    title_rect = title.get_rect(center=(WIDTH // 2, 50))  #create a rectangle with rounded corners for the leaderboard button
     screen.blit(title, title_rect)
 
     # Draw sort order indicator
@@ -282,14 +282,14 @@ def draw_leaderboard():
     for button in leaderboard_buttons:
         button.draw(screen)
 
-
+#reset the game every time the user click on try again
 def reset_game():
     global health, score, zombies, bullets
-    health = 3
-    score = 0
-    zombies = []
-    bullets = []
-    soldier_rect.center = (WIDTH // 2, HEIGHT // 2)
+    health = 3 #3 hearts at the begining
+    score = 0  #score reset at 0
+    zombies = [] #zombie list empty
+    bullets = [] #bullets list empty
+    soldier_rect.center = (WIDTH // 1, HEIGHT // 1)
 
 
 # Main Game Loop
@@ -297,49 +297,50 @@ running = True
 while running:
     if current_state == GAME:
         if not pygame.mixer.music.get_busy():  # If no music is playing
-            play_music()
-        screen.blit(background, (0, 0))
+            play_music() #play the game music
+        screen.blit(background, (0, 0))# rendering the background image in the top left corner of the screen
 
         # Handle events
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                running = False
+                running = False                 #close the game
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
-                    current_state = MAIN_MENU
+                    current_state = MAIN_MENU   #back to main menu if the key escape is pressed
 
-        # Get keys for movement
+        # keys for the soldier movements
         keys = pygame.key.get_pressed()
         if keys[pygame.K_w]:
-            soldier_rect.y -= 3
+            soldier_rect.y -= 3  #if W is pressed add 3 to the y position of the soldier
         if keys[pygame.K_s]:
-            soldier_rect.y += 3
+            soldier_rect.y += 3  #if S is pressed add -3 to the y position of the soldier
         if keys[pygame.K_a]:
-            soldier_rect.x -= 3
+            soldier_rect.x -= 3  #if A is pressed add -3 to the x position of the soldier
         if keys[pygame.K_d]:
-            soldier_rect.x += 3
+            soldier_rect.x += 3  #if D is pressed add 3 to the x position of the soldier
 
-        # Keep soldier on screen
+        # Keep soldier on screen and blocking him from going outside the screen
         soldier_rect.x = max(0, min(WIDTH - soldier_rect.width, soldier_rect.x))
         soldier_rect.y = max(0, min(HEIGHT - soldier_rect.height, soldier_rect.y))
 
-        # Mouse position and angle
+        # Calculating Mouse position and angle
         mouse_x, mouse_y = pygame.mouse.get_pos()
         angle = math.degrees(math.atan2(-(mouse_y - soldier_rect.centery), mouse_x - soldier_rect.centerx))
 
         # Rotate soldier
-        rotated_soldier = pygame.transform.rotate(soldier, angle)
-        soldier_pos = rotated_soldier.get_rect(center=soldier_rect.center)
-        screen.blit(rotated_soldier, soldier_pos)
+        rotated_soldier = pygame.transform.rotate(soldier, angle)           #rotate soldier depending on the position of the mouse
+        soldier_pos = rotated_soldier.get_rect(center=soldier_rect.center) # Obtain a rectangle that is centred at the original soldier's position for the rotated soldier picture.
+        screen.blit(rotated_soldier, soldier_pos)                           # Display the rotated soldier picture on the screen at the given location.
+
 
         # Shooting bullets
-        if keys[pygame.K_SPACE] and time.time() - last_shot > shoot_cooldown:
-            bullet_dx = math.cos(math.radians(angle))
-            bullet_dy = -math.sin(math.radians(angle))
-            bullet_x = soldier_rect.centerx + 30 * bullet_dx
-            bullet_y = soldier_rect.centery + 10 * bullet_dy
-            bullets.append({"x": bullet_x, "y": bullet_y, "dx": bullet_dx, "dy": bullet_dy})
-            last_shot = time.time()
+        if keys[pygame.K_SPACE] and time.time() - last_shot > shoot_cooldown:#check if The shoot_cooldown period is exceeded by the time since the last shot, guaranteeing a lag between shoots.
+            bullet_dx = math.cos(math.radians(angle))# Calculate the bullet's movement direction along the x-axis
+            bullet_dy = -math.sin(math.radians(angle))# Calculate the bullet's movement direction along the y-axis
+            bullet_x = soldier_rect.centerx + 30 * bullet_dx# Find the initial x-coordinate of the bullet, 30 units away from the soldier's centre, in the direction of bullet_dx.
+            bullet_y = soldier_rect.centery + 10 * bullet_dy # Find the initial y-coordinate of the bullet, 10 units away from the soldier's centre, in the direction of bullet_dy.
+            bullets.append({"x": bullet_x, "y": bullet_y, "dx": bullet_dx, "dy": bullet_dy})   # Add the bullet's position and movement direction to the list of bullets
+            last_shot = time.time() #update the last bullet shot time with the current time
 
         # Update bullets
         for bullet in bullets[:]:
