@@ -92,7 +92,7 @@ zombie_img = load_image('skeleton-attack.png', (50, 50))        #load zombie ima
 heart_img = load_image('heart.png', (40, 40))                   #load heart image from the disk
 
 #soldier and bullet settings
-soldier_rect = soldier.get_rect(center=(WIDTH // 0.5, HEIGHT // 0.5))        #creating and centering the soldier HitBox
+soldier_rect = soldier.get_rect(center=(WIDTH // 2, HEIGHT // 2))        #creating and centering the soldier HitBox
 bullets = []                                                                 #empty bullet list
 bullet_speed = 10                                      #a variable which set the bullet speed to 10
 last_shot = 0
