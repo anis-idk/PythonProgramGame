@@ -176,7 +176,7 @@ def update_leaderboard(username, score):
     leaderboard = load_leaderboard()
     leaderboard.append({"username": username, "score": score})   #display the username with its score
     leaderboard.sort(key=lambda x: x["score"], reverse=True)     #sorting the leaderboard
-    leaderboard = leaderboard[:10]  # Keep only top 10           #keep the top 10 best players
+    leaderboard = leaderboard[:8]  # Keep only top 8          #keep the top 8 best players
     save_leaderboard(leaderboard)   #save the leaderboard in json file
 
 # Create menu buttons
