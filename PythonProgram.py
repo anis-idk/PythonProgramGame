@@ -23,9 +23,12 @@ def stop_music():
     pygame.mixer.music.stop()              #Stop the music playing
 
 # Function to play a sound effect (zombie dying)
-def play_sound_effect(sound):
-    sound_effect = pygame.mixer.Sound(sound)             #
-    sound_effect.play()
+def play_sound_effect(sound_path):
+    try:
+        sound_effect = pygame.mixer.Sound(sound_path)
+        sound_effect.play()
+    except pygame.error as e:
+        print(f"Error playing sound {sound_path}: {e}")
 
 #Screen and game setup
 WIDTH, HEIGHT = 800, 600                          #defines the dimensions of the screen
