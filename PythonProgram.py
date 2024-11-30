@@ -163,7 +163,7 @@ def load_leaderboard():
     try:
         with open('leaderboard.json', 'r') as f:  #trying reading the json file
             return json.load(f)
-    except FileNotFoundError:                 #if there is jason file or no data in jason file , return an empty leadearboard
+    except FileNotFoundError:                 #if there is jason file or no data in jason file , return an empty leaderboard
         return []
 
 def save_leaderboard(leaderboard):
@@ -286,7 +286,7 @@ def draw_leaderboard():
 #reset the game every time the user click on try again
 def reset_game():
     global health, score, zombies, bullets
-    health = 3 #3 hearts at the begining
+    health = 3 #3 hearts at the beginning
     score = 0  #score reset at 0
     zombies = [] #zombie list empty
     bullets = [] #bullets list empty
@@ -361,7 +361,7 @@ while running:
             last_zombie_spawn_time = time.time()
 
         # Update zombies
-        for zombie in zombies[:]:#looping throught each zombie
+        for zombie in zombies[:]:#looping through each zombie
             dx = soldier_rect.centerx - zombie["x"]#calculate the horizontal distance between the zombie and soldier
             dy = soldier_rect.centery - zombie["y"]#calculate the vertical distance between the zombie and soldier
             dist = math.hypot(dx, dy)#get the distance to the soldier
