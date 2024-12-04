@@ -81,7 +81,7 @@ The following libraries are used in this project:
 - **PythonProject.py**: The main entry point for the game.
 - **leaderboard.json**: Stores player scores and usernames.
 > [!IMPORTANT]
-> This file will be created after first game over
+> **leaderboard.json** will be created after a first game over
 
 - **requirements.txt**: A list of Python dependencies.
 - **README.md**: Project documentation, such as installation guidelines and game details.
