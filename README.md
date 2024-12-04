@@ -68,11 +68,11 @@ The user experience and game functionality are the primary focus of this project
 
 ## Libraries Used
 The following libraries are used in this project:
-- Pygame: To handle game rendering, audio, and animations.
-- JSON: To save and load the leaderboard data.
-- random: Enables randomness, such as zombie random spawn locations.
-- math: Offers mathematical operations such as trigonometry and angle computations.
-- os: controls the file paths for resources, such as pictures and audio.
+- **Pygame**: To handle game rendering, audio, and animations.
+- **JSON**: To save and load the leaderboard data.
+- **random**: Enables randomness, such as zombie random spawn locations.
+- **math**: Offers mathematical operations such as trigonometry and angle computations.
+- **os**: controls the file paths for resources, such as pictures and audio.
 
 
 ## Project Structure
