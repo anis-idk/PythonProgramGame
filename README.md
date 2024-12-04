@@ -77,11 +77,11 @@ The following libraries are used in this project:
 
 
 ## Project Structure
-- assets/ : Contains game assets like images and sounds.
-- PythonProject.py: The main entry point for the game.
-- leaderboard.json: Stores player scores and usernames.
-- requirements.txt: A list of Python dependencies.
-- README.md: Project documentation, such as installation guidelines and game details.
+- **assets/** : Contains game assets like images and sounds.
+- **PythonProject.py**: The main entry point for the game.
+- **leaderboard.json**: Stores player scores and usernames.
+- **requirements.txt**: A list of Python dependencies.
+- **README.md**: Project documentation, such as installation guidelines and game details.
 
 ## Unit Tests (optional)
 The project does not include unit tests , This project is more concerned with the user experience and game functioning 
