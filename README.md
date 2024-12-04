@@ -10,7 +10,8 @@ The source code for this project is available on GitHub: https://github.com/anis
 
 ## Declaration of Own Work
 I confirm that this assignment is my own work.
-Where I have referred to academic sources, I have provided in-text citations and included the sources in the final reference list.
+Where I have referred to academic sources, I have provided in-text citations and included the sources in the final 
+reference list.
 
 ## Introduction
 This code shows how to use the Pygame package to create a basic zombie shooter game. The soldier in the game has to 
@@ -24,7 +25,7 @@ To play the **Zombie Shooter Game**, install the required dependencies and launc
 
 1) Python : the game is coded in python so please ensure that you have python installed on your computer , you can 
 download the latest version of python from : https://www.python.org/downloads/ , you can check if python is installed by 
-typing this command in the terminal or command prompt: ´python —version’
+typing this command in the terminal or command prompt: `python —version`
  
 
 ## How to Play
