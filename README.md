@@ -36,12 +36,13 @@ typing this command in the terminal or command prompt: `python —version`
 3) Navigate to the project Directory : `cd Zombie-Shooter-Game`
 
 > [!NOTE]
-> Set up a virtual Environment is optional but recommended to use to keep the dependencies isolated
+> Set up a virtual Environment is optional but recommended to use to keep the dependencies isolated.
+> Make sure to active it before using it
 
 4) Install all the necessary dependencies and libraries by running : `pip install -r requirements.txt`
 
 > [!CAUTION]
-> Pip must be installed in your os   
+> Make sure that Pip is installed.   
 
 ## How to Play
 - Use W, A, S, and D keys to move the soldier.
