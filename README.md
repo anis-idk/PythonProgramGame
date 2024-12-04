@@ -84,7 +84,7 @@ The following libraries are used in this project:
 > **leaderboard.json** file will be created after a first game over
 
 - **requirements.txt**: A list of Python dependencies.
-- **README.md**: Project documentation, such as installation guidelines and game details.
+- **README.md**: Project documentation, such as installation guidelines and project details.
 
 ## Unit Tests (optional)
 The project does not include unit tests , This project is more concerned with the user experience and game functioning 
