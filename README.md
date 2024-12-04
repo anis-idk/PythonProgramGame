@@ -50,7 +50,7 @@ typing this command in the terminal or command prompt: `python —version`
 - Navigate through the menu using your mouse to select options.
 
 ### Running the Game
-Once the installation is done start the game by running : `PythonProject.py`
+Once the installation is done start the game by running : `python PythonProject.py`
 
 
 ### Running Unit Tests
