@@ -41,6 +41,8 @@ typing this command in the terminal or command prompt: `python —version`
 4) Install all the necessary dependencies and libraries by running : `pip install -r requirements.txt`
 
 
+
+
 ## How to Play
 - Use W, A, S, and D keys to move the soldier.
 - Use the mouse or the touchpad to aim .
@@ -48,7 +50,7 @@ typing this command in the terminal or command prompt: `python —version`
 - Navigate through the menu using your mouse to select options.
 
 ### Running the Game
-
+Once the installation is done start the game by running : `PythonProject.py`
 
 
 ### Running Unit Tests
