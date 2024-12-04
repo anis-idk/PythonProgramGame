@@ -1,8 +1,5 @@
 Zombie Shooter Game
 
-#GitHub Repository
-The source code for this project is available on GitHub: https://github.com/xxyy
-
 ## Identification
 - **Name: Anis Sahnoune** 
 - **P-number: P475508** 
