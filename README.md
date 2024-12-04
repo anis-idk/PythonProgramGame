@@ -24,7 +24,7 @@ To play the **Zombie Shooter Game**, install the required dependencies and launc
 
 1) Python : the game is coded in python so please ensure that you have python installed on your computer , you can 
 download the latest version of python from : https://www.python.org/downloads/ , you can check if python is installed by 
-2) typing this command in the terminal or command prompt: python --version
+2) typing this command in the terminal or command prompt: ´python —version’
 
 3)Clone 
 
