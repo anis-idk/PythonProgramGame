@@ -37,7 +37,6 @@ typing this command in the terminal or command prompt: `python —version`
 
 > [!NOTE]
 > Set up a virtual Environment is optional but recommended to use to keep the dependencies isolated.
-
 > Make sure to activate your Virtual Environment before using it
 
 4) Install all the necessary dependencies and libraries by running : `pip install -r requirements.txt`
