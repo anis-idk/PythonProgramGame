@@ -35,6 +35,9 @@ typing this command in the terminal or command prompt: `python —version`
 
 3) Navigate to the project Directory : `cd Zombie-Shooter-Game`
 
+> [!NOTE]
+> Set up a virtual Environment is optional but recommended to use to keep the dependencies isolated
+
 ## How to Play
 - Use W, A, S, and D keys to move the soldier.
 - Use the mouse or the touchpad to aim .
