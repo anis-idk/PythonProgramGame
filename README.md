@@ -40,6 +40,8 @@ typing this command in the terminal or command prompt: `python —version`
 
 4) Install all the necessary dependencies and libraries by running : `pip install -r requirements.txt`
 
+> [!CAUTION]
+> Pip must be installed in your os   
 
 ## How to Play
 - Use W, A, S, and D keys to move the soldier.
