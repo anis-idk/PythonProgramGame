@@ -65,6 +65,7 @@ The user experience and game functionality are the primary focus of this project
 - Menu: Displays the main menu with play , leaderboard and quit buttons 
 - Game Over screen: Displays the game over screen with the try again button and main menu button
 - Login Screen : Displays the login screen which let the user enter its username 
+
 ## Libraries Used
 The following libraries are used in this project:
 - Pygame: To handle game rendering, audio, and animations.
