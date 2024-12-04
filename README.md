@@ -73,6 +73,7 @@ The following libraries are used in this project:
 - **random**: Enables randomness, such as zombie random spawn locations.
 - **math**: Offers mathematical operations such as trigonometry and angle computations.
 - **os**: controls the file paths for resources, such as pictures and audio.
+- **time**: controls the game's timing functions such as FPS , cooldowns ect...
 
 
 ## Project Structure
