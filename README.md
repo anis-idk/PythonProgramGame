@@ -27,6 +27,7 @@ To play the **Zombie Shooter Game**, install the required dependencies and launc
 download the latest version of python from : https://www.python.org/downloads/ , you can check if python is installed by 
 typing this command in the terminal or command prompt: `python —version`
  
+2) Clone The Repository : 
 
 ## How to Play
 - Use W, A, S, and D keys to move the soldier.
