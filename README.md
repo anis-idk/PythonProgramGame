@@ -30,6 +30,9 @@ typing this command in the terminal or command prompt: `python —version`
 2) Clone The Repository : start by cloning the repository to your local disk using the following command in CMD
 `git clone https://github.com/anis-idk/Zombie-Shooter-Game.git`
 
+> [!TIP]
+> You can also download the repository as a ZIP file and extract it to a folder of your choice
+
 ## How to Play
 - Use W, A, S, and D keys to move the soldier.
 - Use the mouse or the touchpad to aim .
